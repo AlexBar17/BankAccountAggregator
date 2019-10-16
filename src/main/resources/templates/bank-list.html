@@ -1,0 +1,99 @@
+<!doctype html>
+<html class="no-js" lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="inc/head.inc::head"></head>
+
+<body>
+<!--[if lt IE 8]-->
+<!--    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>-->
+<!--[endif]-->
+
+<!-- Start Left menu area -->
+<div th:replace="inc/left_menu.inc::left_menu"></div>
+
+<!-- Start Welcome area -->
+<div th:replace="inc/top_nav.inc::top_nav"></div>
+
+
+<!--<tr th:each="user : ${users}">-->
+<!--    <td th:text="${user.name}"></td>-->
+<!--    <td><a href="#" th:text="${user.title}">Title ...</a></td>-->
+<!--    <td th:text="${user.text}">Text ...</td>-->
+<!--</tr>-->
+
+<div class="data-table-area mg-b-15">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="sparkline13-list">
+
+
+<!--Bank list-->
+<!--<div class="section">-->
+<!--    <div class="container">-->
+
+<!--        &lt;!&ndash;/*@thymesVar id="bankList" type="com.controllers.BanksListController"*/&ndash;&gt;-->
+<!--        <div th:each="bank : ${bankList}" class="row">-->
+<!--            <div class="service-wrapper">-->
+<!--                &lt;!&ndash;/*@thymesVar id="bank" type="com.entity.Bank"*/&ndash;&gt;-->
+<!--            &lt;!&ndash;<img th:src="${bank.getName()}" th:alt="${bank.getName()}">&ndash;&gt;-->
+<!--                <h3 th:text="${bank.getName()}">BANK NAME</h3>-->
+<!--                <p th:text="${bank.getDescription()}">DESCRIPTION</p>-->
+<!--                <a th:href="@{'/bank-list/bank/'+${bank.getId()}}" class="btn">Узнать больше</a>-->
+<!--            </div>-->
+<!--        </div>-->
+
+<!--    </div>-->
+<!--</div>-->
+                    <div class="widget-program-box mg-tb-30">
+                        <div class="container-fluid">
+                            <div class="row">
+
+                                <!--/*@thymesVar id="bankList" type="com.controllers.BanksListController"*/-->
+                                <div th:each="bank : ${bankList}">
+
+                                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                                    <div class="hpanel widget-int-shape res-tablet-mg-t-30 dk-res-t-pro-30">
+                                        <div class="panel-body">
+                                            <div class="text-center content-box">
+
+<!--                                                <h2 class="m-b-xs">Box title</h2>-->
+                                                <h2 th:text="${bank.getName()}">BANK NAME</h2>
+
+<!--                                                <p class="font-bold text-danger">Lorem ipsum</p>-->
+<!--                                                <div class="m icon-box">-->
+<!--                                                    <i class="educate-icon educate-charts"></i>-->
+<!--                                                </div>-->
+
+<!--                                                <p class="small mg-t-box">-->
+<!--                                                    Lorem Ipsum passages and more recently with the desktop published software like Aldus PageMaker.-->
+<!--                                                </p>-->
+                                                <p th:text="${bank.getDescription()}">DESCRIPTION</p>
+<!--                                            <button class="btn btn-danger widget-btn-4 btn-sm">Action button</button>-->
+                                                <a th:href="@{'/bank-list/bank/'+${bank.getId()}}" class="btn btn-primary btn-lg active">Узнать больше</a>
+<!--                                            <a th:href="@{'/bank-list/bank/'+${bank.getId()}}" class="btn">Узнать больше</a>-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer th:replace="inc/footer.inc::footer"></footer>
+
+<!--</div>-->
+
+<!-- Scripts -->
+<div th:replace="inc/js.inc::js"></div>
+
+</body>
+</html>

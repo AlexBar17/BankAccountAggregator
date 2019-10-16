@@ -1,0 +1,66 @@
+<!doctype html>
+<html class="no-js" lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="inc/head.inc::head"></head>
+
+<body>
+<!--[if lt IE 8]-->
+<!--    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>-->
+<!--[endif]-->
+<!--[if lt IE 7]>
+<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to
+    improve your experience.</p>
+<![endif]-->
+
+<!-- Start Left menu area -->
+<div th:replace="inc/left_menu.inc::left_menu"></div>
+
+<!-- Start Welcome area -->
+<div th:replace="inc/top_nav.inc::top_nav"></div>
+
+<div class="data-table-area mg-b-15">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="sparkline13-list">
+
+<!--Bank list-->
+<div class="section">
+    <div class="container">
+        <!--/*@thymesVar id="bankList" type="com.controllers.BanksListController"*/-->
+<!--            <tr th:if="${allUserProduct == null}">-->
+<!--                <td colspan="2"> No Data Available </td>-->
+<!--            </tr>-->
+        <div th:each="product : ${allUserProduct}" class="row">
+            <div class="service-wrapper">
+                <!--/*@thymesVar id="bank" type="com.entity.Bank"*/-->
+                <!--<img th:src="${bank.getName()}" th:alt="${bank.getName()}">-->
+                <p th:text="${product.getBankBill().getId()}">BankBill_id</p>
+                <p th:text="${product.getBankBill().getName()}">BankBill_name</p>
+                <p th:text="${product.getUser().getName()}">User</p>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Footer -->
+<footer th:replace="inc/footer.inc::footer"></footer>
+
+<!--</div>-->
+
+<!-- Scripts -->
+<div th:replace="inc/js.inc::js"></div>
+
+</body>
+</html>

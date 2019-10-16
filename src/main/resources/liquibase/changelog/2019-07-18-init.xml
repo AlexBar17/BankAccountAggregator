@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+
+    <changeSet id="2019-07-18-init" author="STC-16_Milovanov_Group">
+        <!--ADD SOME BANKS-->
+
+        <insert tableName="bank">
+            <column name="name" value="Сбербанк"/>
+            <column name="description" value="Сбербанк России - частным клиентам" />
+        </insert>
+        <insert tableName="bank">
+            <column name="name" value="Тинькофф Банк"/>
+            <column name="description" value="TCS Group Holding - Коммерческий банк" />
+        </insert>
+        <insert tableName="bank">
+            <column name="name" value="«АК БАРС» Банк"/>
+            <column name="description" value="Ак Барс Банк - Казань" />
+        </insert>
+
+<!--        <insert tableName="bank">-->
+<!--            <column name="name" value="Райффайзенбанк"/>-->
+<!--            <column name="description" value="Райффайзенбанк – банк для жизни и бизнеса" />-->
+<!--        </insert>-->
+
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,291 @@
+<!doctype html>
+<html class="no-js" lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="inc/head.inc::head"></head>
+
+<body>
+
+<!-- Start Left menu area -->
+<!--<div th:replace="inc/left_menu.inc::left_menu"></div>-->
+
+<!-- Start Welcome area -->
+<div th:replace="inc/top_nav.inc.index::top_nav"></div>
+
+<!-- Page Content-->
+    <div class="breadcome-area">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="breadcome-list">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--<div class="data-table-area mg-b-15">-->
+<div class="income-order-visit-user-area">
+    <div class="container-fluid">
+        <div class="row">
+<!--            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">-->
+            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+<!--                <div class="sparkline13-list">-->
+
+                    <div class="white-box analytics-info-cs">
+
+                        <h3 class="box-title">Пользователей в системе</h3>
+                        <ul class="list-inline two-part-sp">
+                            <li>
+                                <div id="sparklinedash"></div>
+                            </li>
+                            <li class="text-right sp-cn-r">
+                                <i class="fa fa-level-up" aria-hidden="true"></i>
+                                <span class="counter text-success">
+                                    <span class="counter"> <tr th:text="${userData.get(0)}"> </tr> </span></span>
+                            </li>
+                        </ul>
+                    </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+<!--                    <div class="analytics-edu-wrap ant-res-b-30 reso-mg-b-30">-->
+                <div class="white-box analytics-info-cs">
+                        <div class="skill-content-3 analytics-edu">
+
+                            <div class="skill">
+                                <div class="progress">
+                                    <div class="lead-content">
+                                        <h3><span class="counter"><tr th:text="${userData.get(1)}"> </tr> </span>% Пользователей открыли счета</h3>
+<!--                                        <p>Пользователей открыли счета</p>-->
+                                    </div>
+                                    <div class="progress-bar wow fadeInLeft" data-progress="33%" style="width: 33%;" data-wow-duration="1.5s" data-wow-delay="1.2s">
+<!--                                        <span><tr th:text="${data.get(1)}"> </tr>%</span>-->
+                                        <span>%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+<!--                    </div>-->
+
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                <div class="white-box analytics-info-cs table-dis-n-pro tb-sm-res-d-n dk-res-t-d-n">
+                    <h3 class="box-title">Активные заявки</h3>
+                    <ul class="list-inline two-part-sp">
+                        <li>
+                            <div id="sparklinedash4"></div>
+                        </li>
+                        <li class="text-right graph-four-ctn">
+                            <i class="fa fa-level-down" aria-hidden="true"></i>
+                            <span class="text-danger"><span class="counter">  <tr th:text="${userData.get(2)}"> </tr>  </span></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+<!--            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">-->
+
+<!--                <div class="white-box analytics-info-cs">-->
+<!--                    <div class="skill-content-3 analytics-edu">-->
+
+<!--                        <div class="skill">-->
+<!--                            <div class="progress">-->
+<!--                                <div class="lead-content">-->
+<!--                                    <h3><span class="counter"><tr th:text="${bankData.get(2)}"> </tr> </span> Продуктов доступно клиентам</h3>-->
+
+<!--                                </div>-->
+<!--                                <div class="progress-bar wow fadeInLeft" data-progress="15%" style="width: 33%;" data-wow-duration="1.5s" data-wow-delay="1.2s">-->
+
+<!--                                    <span> # </span>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+
+<!--                </div>-->
+<!--            </div>-->
+        </div>
+    </div>
+</div>
+
+
+
+<div class="library-book-area mg-t-30">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                <div class="single-cards-item">
+                    <div class="single-product-image">
+                        <a href="#"><img src="img/product/profile-bg.jpg" alt=""></a>
+                    </div>
+                    <div class="single-product-text">
+<!--                        <img src="img/product/pro4.jpg" alt="">-->
+                        <h4><a class="cards-hd-dn" href="bank-list">Банки-партнеры</a></h4>
+                        <h5>Финансовые организации в системе</h5>
+<!--                        <p class="ctn-cards">Lorem ipsum dolor sit amet, this is a consectetur adipisicing elit</p>-->
+                        <a class="follow-cards" href="admin">Подробнее</a>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <div class="cards-dtn">
+                                    <h3><span class="counter"> <tr th:text="${bankData.get(0)}"> </tr> </span></h3>
+                                    <p>Типы счетов</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <div class="cards-dtn">
+                                    <h3><span class="counter"><tr th:text="${bankData.get(1)}"> </tr></span></h3>
+                                    <p>Банки</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <div class="cards-dtn">
+                                    <h3><span class="counter"><tr th:text="${bankData.get(2)}"> </tr></span></h3>
+                                    <p>Открытые счета</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<!--            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">-->
+<!--                <div class="single-review-st-item res-mg-t-30 table-mg-t-pro-n">-->
+<!--                    <div class="single-review-st-hd">-->
+<!--                        <h4> <a >Доступные счета</a></h4>-->
+<!--&lt;!&ndash;                        <h4><a class="cards-hd-dn" href="bank">Доступные счета</a></h4>&ndash;&gt;-->
+<!--                    </div>-->
+<!--                    <table>-->
+<!--                        <tbody>-->
+<!--                        &lt;!&ndash;    <tr th:if="${users == null}">&ndash;&gt;-->
+<!--                        &lt;!&ndash;        <td colspan="2"> No Books Available </td>&ndash;&gt;-->
+<!--                        &lt;!&ndash;    </tr>&ndash;&gt;-->
+<!--                        <tr th:each="account : ${accountData}">-->
+<!--                            <div class="single-review-st-text">-->
+<!--                                <div class="review-ctn-hf">-->
+<!--&lt;!&ndash;                                <h3>Gobetro pro</h3>&ndash;&gt;-->
+<!--                                    <p><span th:text="${account.title}"></span></p>-->
+<!--&lt;!&ndash;                            <td><span th:text="${user.email}"> Email </span></td>&ndash;&gt;-->
+<!--&lt;!&ndash;                            <td><span th:text="${user.active}"> Active </span></td>&ndash;&gt;-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </tr>-->
+<!--                        </tbody>-->
+<!--                    </table>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">-->
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                        <div class="sparkline13-list mg-b-15">
+                            <div class="sparkline13-hd">
+                                <div class="main-sparkline13-hd">
+                                    <h1>Доступные счета</h1>
+                                </div>
+                            </div>
+                            <div class="sparkline13-graph">
+                                <div class="static-table-list">
+                                    <table class="table sparkle-table">
+                                        <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th></th>
+                                            <th>Счет</th>
+                                            <th>Проценты</th>
+                                        </tr>
+                                        </thead>
+
+                                        <tbody>
+                                        <tr th:each="account : ${accountData}">
+<!--                                        <tr>-->
+                                            <td><span th:text="${account.id}"></span></td>
+                                            <td><span class="pie" th:text="${account.id}">7</span>
+<!--                                            <td><span data-diameter="40" class="updating-chart">2,5,9,6,5,9,7,3,5,2,5,3,9,6,5,8,7,8,5,2</span>-->
+                                            </td>
+<!--                                            <td>Roshid</td>-->
+
+                                            <td><span th:text="${account.title}"></span></td>
+
+                                            <td><i class="fa fa-level-up"></i> <span th:text="${account.id*1.7+10}"></span></td>
+                                        </tr>
+<!--                                        <tr>-->
+<!--                                            <td>2</td>-->
+<!--                                            <td><span class="line">8,5,2,-1,-3,-2,8,3,5,3</span>-->
+<!--                                            </td>-->
+<!--                                            <td>Khan</td>-->
+<!--                                            <td><i class="fa fa-level-down"></i> 75%</td>-->
+<!--                                        </tr>-->
+<!--                                        <tr>-->
+<!--                                            <td>3</td>-->
+<!--                                            <td><span class="bar">5,3,9,6,5,9,7,3,5,2</span>-->
+<!--                                            </td>-->
+<!--                                            <td>Shak</td>-->
+<!--                                            <td><i class="fa fa-level-up"></i> 95%</td>-->
+<!--                                        </tr>-->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+<!--            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">-->
+<!--                <div class="single-product-item res-mg-t-30 table-mg-t-pro-n tb-sm-res-d-n dk-res-t-d-n">-->
+<!--                    <div class="single-product-image">-->
+<!--                        <a href="#"><img src="img/product/book-4.jpg" alt=""></a>-->
+<!--                    </div>-->
+<!--                    <div class="single-product-text edu-pro-tx">-->
+<!--                        <h4><a href="#">Title Demo Here</a></h4>-->
+<!--                        <h5>Lorem ipsum dolor sit amet, this is a consec tetur adipisicing elit</h5>-->
+<!--                        <div class="product-price">-->
+<!--                            <h3>$45</h3>-->
+<!--                            <div class="single-item-rating">-->
+<!--                                <i class="educate-icon educate-star"></i>-->
+<!--                                <i class="educate-icon educate-star"></i>-->
+<!--                                <i class="educate-icon educate-star"></i>-->
+<!--                                <i class="educate-icon educate-star"></i>-->
+<!--                                <i class="educate-icon educate-star-half"></i>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="product-buttons">-->
+<!--                            <button type="button" class="button-default cart-btn">Read More</button>-->
+<!--                            <button type="button" class="button-default"><i class="fa fa-heart"></i></button>-->
+<!--                            <button type="button" class="button-default"><i class="fa fa-share"></i></button>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+        </div>
+    </div>
+</div>
+
+<!--<div class="breadcome-area">-->
+<!--    <div class="container-fluid">-->
+<!--        <div class="row">-->
+<!--            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">-->
+<!--                <div class="breadcome-list">-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<!-- Footer -->
+<footer th:replace="inc/footer.inc::footer"></footer>
+
+<!--</div>-->
+
+<!-- Scripts -->
+<div th:replace="inc/js.inc::js"></div>
+
+<!-- peity JS
+    ============================================ -->
+<script src="/static/js/peity/jquery.peity.min.js"></script>
+<script src="/static/js/peity/peity-active.js"></script>
+
+</body>
+</html>

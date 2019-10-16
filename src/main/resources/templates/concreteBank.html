@@ -1,0 +1,49 @@
+<!doctype html>
+<html class="no-js" lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="inc/head.inc::head"></head>
+
+<body>
+<!--[if lt IE 8]-->
+<!--    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>-->
+<!--[endif]-->
+
+<!-- Start Left menu area -->
+<div th:replace="inc/left_menu.inc::left_menu"></div>
+
+<!-- Start Welcome area -->
+<div th:replace="inc/top_nav.inc::top_nav"></div>
+
+<!--Concrete Bank-->
+<div class="section">
+    <div class="container">
+        <!--/*@thymesVar id="bank" type="com.entity.Bank"*/-->
+        <div class="row">
+            <div class="service-wrapper">
+                <h2 class="text-center" th:text="${bank.getName()}"></h2>
+                <h4 class="text-center" th:text="${bank.getDescription()}"></h4>
+            </div>
+        </div>
+        <!--/*@thymesVar id="bill_types" type="com.controllers.ConcreteBankController"*/-->
+        <div th:each="bill_type, iterator : ${bank.getBankBills()}" class="card border-primary mb-3 col-lg-4 d-flex align-items-stretch">
+            <div class="card-header text-primary">
+                <!--/*@thymesVar id="bill_type" type="com.entity.BankBill"*/-->
+                <div th:text="${bill_type.getTypeOfBankBill().getTitle()}" class="h2">BILL TYPE</div>
+            </div>
+            <div class="card-body text-primary">
+                <!--/*@thymesVar id="bill_type" type="com.entity.BankBill"*/-->
+                <h3 class="card-title" th:text="${bill_type.getName()}">Some name</h3>
+                <p class="card-text" th:text="${bill_type.getDescription()}">Some text</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer -->
+<footer th:replace="inc/footer.inc::footer"></footer>
+<!--</div>-->
+<!-- Scripts -->
+<div th:replace="inc/js.inc::js"></div>
+</body>
+</html>

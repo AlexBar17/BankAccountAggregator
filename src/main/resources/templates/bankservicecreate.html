@@ -1,0 +1,84 @@
+<!doctype html>
+<html class="no-js" lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="inc/head.inc::head"></head>
+
+<body>
+<!--[if lt IE 8]-->
+<!--    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>-->
+<!--[endif]-->
+
+<!-- Start Left menu area -->
+<div th:replace="inc/left_menu.inc::left_menu"></div>
+
+<!-- Start Welcome area -->
+<div th:replace="inc/top_nav.inc::top_nav"></div>
+
+<div class="data-table-area mg-b-15">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="sparkline13-list">
+
+<h2>Форма создания банковского продукта</h2>
+<form method="post" th:action="${formAction}" th:object="${bankBill}">
+    <div>
+        <label>Тип счёта:</label>
+        <select class="custom-select" th:field="*{typeOfBankBill}">
+            <option value="">Выберите тип счёта</option>
+            <option th:each="typeOfBankBill : ${typeOfBankBillList}" th:value="${typeOfBankBill.Id}" th:text="${typeOfBankBill.getTitle()}"></option>
+        </select>
+    </div>
+    <br/>
+    <div>
+        <label>ID банка: </label>
+        <select th:field="*{bank}">
+            <option value="">Выберите банк</option>
+            <option th:each="bank : ${banks}" th:value="${bank.Id}" th:text="${bank.getName()}"></option>
+        </select>
+    </div>
+    <br/>
+    <div>
+        <label>Наименование: </label>
+        <input type="text" th:field="*{name}"/>
+    </div>
+    <br/>
+    <div>
+        <label>Процентная ставка: </label>
+        <input type="text" th:field="*{percentRate}"/>
+    </div>
+    <br/>
+    <div>
+        <label>Срок дейтсвия: </label>
+        <input type="text" th:field="*{validity}"/>
+    </div>
+    <br/>
+    <div>
+        <label>Описание: </label>
+        <input type="text" th:field="*{description}"/>
+    </div>
+    <br/>
+    <div>
+        <button type="submit" class="btn btn-primary submit">Создать</button>
+    </div>
+
+    <!--    th:name="addService" th:text="*{addService}"-->
+</form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer -->
+<footer th:replace="inc/footer.inc::footer"></footer>
+
+<!--</div>-->
+
+<!-- Scripts -->
+<div th:replace="inc/js.inc::js"></div>
+
+</body>
+</html>

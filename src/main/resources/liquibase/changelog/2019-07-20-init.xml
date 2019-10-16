@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+
+    <changeSet id="2019-07-14-init" author="STC-16_Milovanov_Group">
+
+        <!--TypeOfBankBill-->
+        <createTable tableName="claim">
+
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+
+            <column name="users_id" type="bigint">
+                <constraints nullable="false" foreignKeyName="fk_users_id" references="users(id)"/>
+            </column>
+
+            <column name="bankbill_id" type="bigint">
+                <constraints nullable="false" foreignKeyName="fk_bank_bill_id" references="bankbill(id)"/>
+            </column>
+
+            <column name="status" type="varchar(20)">
+                <constraints nullable="false"/>
+            </column>
+
+        </createTable>
+
+    </changeSet>
+</databaseChangeLog>
+
